@@ -1,5 +1,4 @@
 import "./app.css"
-import { useState } from "react";
 import Display from "./components/Display";
 import fullText from "./fullText";
 
