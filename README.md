@@ -1,0 +1,1 @@
+A fast Bible search app, written in React. So far only supports the KJV
