@@ -1,1 +1,4 @@
-A fast Bible search app, written in React. So far only supports the KJV
+A fast Bible search app, written in React.
+
+Start the App with:
+- `npm start`
