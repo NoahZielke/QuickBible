@@ -74,12 +74,11 @@ function Display( {fullText} ) {
         <div>
             <div className="row justify-content-center">
                 <div className="col-lg-6 col-sm-12 py-4">
-                    <h5 className="search-bar-label">Search the Bible:</h5>
                     <Form className="search-bar" onSubmit={handleSubmit}>
                         <InputGroup>
                         <Form.Control
                             type="text"
-                            placeholder="Enter a reference or search term"
+                            placeholder="Enter a Bible reference or search term"
                             value={searchQuery}
                             onChange={handleSearchChange}
                         />
