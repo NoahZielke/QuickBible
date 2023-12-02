@@ -229,7 +229,8 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
         return [[{book: 100, chapter: 1, verse: 1}]];
     }
 
-    const searchTerms = searchQuery.split(/\s*,\s*/);  // Split on commas -> could add semicolons later
+    // Split search query on commas to check for refs -> could add semicolon split
+    const searchTerms = searchQuery.split(/\s*,\s*/);
     let searchMode = false;
     
     const parsedSearchTerms = searchTerms.map((term) => {
@@ -388,7 +389,7 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
     } else {
         let matchingVerses = [];
 
-        // If first and last chars are both ", enter perform a strict search
+        // If first and last chars are both ", perform a strict search
         const firstChar = searchQuery[0];
         const lastChar = searchQuery[searchQuery.length - 1];
         const searchQueryStrippedQuotes = searchQuery.toLowerCase().substring(1, searchQuery.length - 1);

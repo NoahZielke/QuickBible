@@ -20,7 +20,7 @@ function VerseList( {fullText, bookChapVerse, last} ) {
 
     const passageHeading = getBookChapterVerseHeading(fullText, bookChapVerse);
 
-    if (bookChapVerse[0].book === 100) {
+    if (bookChapVerse[0].book === 100) {    // This is basically a hack to account for the fact that normalizeQuery is set up to always return *something*
         return;
     } else if (last) { // The only difference between these two is that "last" has no horizontal rule
         return (
