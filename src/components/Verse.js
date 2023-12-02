@@ -2,7 +2,7 @@
 function Verse({ fullText, verseRef }) {
     return (
         <div>
-            <p className="verse-text my-0"><span class="verse-number">{verseRef.verse}</span> {fullText[verseRef.book][verseRef.chapter][verseRef.verse - 1]}</p>
+            <p className="verse-text my-0"><span className="verse-number">{verseRef.verse}</span> {fullText[verseRef.book][verseRef.chapter][verseRef.verse - 1]}</p>
         </div>
     );
 }

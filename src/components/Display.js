@@ -4,8 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
+import KJVFullText from "../resources/KJVFullText";
 
-function Display( {fullText} ) {
+function Display( {versionList} ) {
+    const [version, setVersion] = useState(KJVFullText);
+
     const [bookChapVerse, setBookChapVerse] = useState([
         [{book: 43, chapter: 3, verse: 16}],
         [{book: 49, chapter: 2, verse: 8}, {book: 49, chapter: 2, verse: 9}],
@@ -19,9 +22,17 @@ function Display( {fullText} ) {
 
     const [searchQuery, setSearchQuery] = useState("");
 
+    const handleVersionSelect = (event) => {
+        versionList.map((singleVersion) => {
+            if (singleVersion[0] === event) {
+                setVersion(singleVersion);
+            }
+        });
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        const normalized = normalizeQuery(fullText, searchQuery, setResultsFeedback);
+        const normalized = normalizeQuery(version[1], searchQuery, setResultsFeedback);
         setBookChapVerse(normalized);
         setSearchQuery("");
     };
@@ -34,13 +45,13 @@ function Display( {fullText} ) {
         if (singleResult === bookChapVerse[bookChapVerse.length - 1]) {
             return (
                 <div>
-                    <VerseList fullText={fullText} bookChapVerse={singleResult} last={true}/>
+                    <VerseList fullText={version[1]} bookChapVerse={singleResult} last={true}/>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <VerseList fullText={fullText} bookChapVerse={singleResult} last={false}/>
+                    <VerseList fullText={version[1]} bookChapVerse={singleResult} last={false}/>
                 </div>
             );
         }
@@ -73,8 +84,27 @@ function Display( {fullText} ) {
 
     return (
         <div>
+            <div className="row justify-content-center pb-2">
+                <div className="col-lg-6 col-sm-12">
+                    <div className="row text-end">
+                        <div className="col-lg-12">
+                        <Dropdown className="version-menu my-0" onSelect={handleVersionSelect}>
+                            <Dropdown.Toggle variant="light"> {/* variant="nonsense"*/}
+                                {version[0]}&nbsp;
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item eventKey="KJV">King James Version (KJV)</Dropdown.Item>
+                                <Dropdown.Item eventKey="WEB">World English Bible (WEB)</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="row justify-content-center">
-                <div className="col-lg-6 col-sm-12 py-4">
+                <div className="col-lg-6 col-sm-12 pb-4">
                     <Form className="search-bar" onSubmit={handleSubmit}>
                         <InputGroup>
                         <Form.Control
