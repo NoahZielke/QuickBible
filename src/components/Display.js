@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function Display( {fullText} ) {
     const [bookChapVerse, setBookChapVerse] = useState([

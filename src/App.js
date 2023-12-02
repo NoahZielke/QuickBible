@@ -1,10 +1,12 @@
 import "./app.css"
 import Display from "./components/Display";
-import fullText from "./fullText";
+import KJVFullText from "./resources/KJVFullText";
+import WEBFullText from "./resources/WEBFullText";
 
 
 function App() {
-    const fullTextConst = fullText();
+    const KJV = KJVFullText();
+    const WEB = WEBFullText();
 
     return (
         <div className="container-fluid">
@@ -12,7 +14,7 @@ function App() {
                 <h3 className="main-title px-2 pt-2 mb-0">Quick Bible</h3>
                 <p className="subtitle mt-0 ps-4 pe-2"><i>An ad-free, lighting-fast Bible search</i></p>
             </div>
-            <Display fullText={fullTextConst} />
+            <Display fullText={KJV} />
         </div>
     );
 }
