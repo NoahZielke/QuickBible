@@ -78,7 +78,7 @@ function Display( {fullText} ) {
                         <InputGroup>
                         <Form.Control
                             type="text"
-                            placeholder="Enter a Bible reference or search term"
+                            placeholder="Enter passage or search term"
                             value={searchQuery}
                             onChange={handleSearchChange}
                         />
