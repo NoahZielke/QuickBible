@@ -235,11 +235,11 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
     let searchMode = false;
     
     const parsedSearchTerms = searchTerms.map((term) => {
-        const fullVerseRegexColon = /(\d*?\s*?\w+)\s+(\d+):(\d+)(?:-(\d+):(\d+))?/;     // John 1:23, John 1:23-1:24, John 1:23-2:34
-        const fullVerseRegexNoColon = /(\d*?\s*?\w+)\s+(\d+):(\d+)(?:-(\d+))?/;         // John 1:23-24
-        const singleChapterRegex = /(\d*?\s*?\w+)\s+(\d+)(?:-(\d+))?/;                  // John 1, John 1-3
-        const partialVerseRegexColon = /(\d+):(\d+)(?:-(\d+))?:?(\d+)?/;                // 1:29, 1:30-31, 1:31-1:32
-        const partialVerseRegexVerseRange = /(\d+)(?:-(\d+))?/;                         // 26, 26-27
+        const fullVerseRegexColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+):(\d+))?/;     // John 1:23, John 1:23-1:24, John 1:23-2:34
+        const fullVerseRegexNoColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+))?/;         // John 1:23-24
+        const singleChapterRegex = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+)(?:-(\d+))?/;                  // John 1, John 1-3
+        const partialVerseRegexColon = /(\d+):(\d+)(?:-(\d+))?:?(\d+)?/;                            // 1:29, 1:30-31, 1:31-1:32
+        const partialVerseRegexVerseRange = /(\d+)(?:-(\d+))?/;                                     // 26, 26-27
 
         let match;
 
