@@ -208,7 +208,8 @@ function getVerseRefs(fullText, filteredSearchTerms) {
         queryResult.map((chapterLevel) => {
             chapterLevel.ranges.map((range) => {
                 let subList = []
-                for(let i = range.startVerse; i <= range.endVerse; i++) {
+                for(let i = parseInt(range.startVerse); i <= parseInt(range.endVerse); i++) {
+                    console.log("pushing")
                     subList.push({book: chapterLevel.book, chapter: range.chapter, verse: i})
                 }
                 fullVerseRefs.push(subList);
