@@ -190,10 +190,10 @@ function getVerseRefs(fullText, filteredSearchTerms) {
 
     const results = filteredSearchTerms.map((term) => {
         // For each term, we need a [{book, ranges: [{chapter, startVerse, endVerse}, ...] }]
-        const startChapter = term.chapters[0];
-        const endChapter = term.chapters[1];
-        const startVerse = term.verses[0];
-        const endVerse = term.verses[1];
+        const startChapter = parseInt(term.chapters[0]);
+        const endChapter = parseInt(term.chapters[1]);
+        const startVerse = parseInt(term.verses[0]);
+        const endVerse = parseInt(term.verses[1]);
 
         if (startChapter === endChapter) {
             return [{book: term.book, ranges: [{chapter: startChapter, startVerse: startVerse, endVerse: endVerse}]}];
