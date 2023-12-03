@@ -146,6 +146,16 @@ function Display( {versionList} ) {
 
 export default Display;
 
+function getChapterCountForBook(fullText, book) {
+    let chapterCount = 0;
+    if (fullText[book]) {
+        chapterCount = Object.keys(fullText[book]).length;
+    } else {
+        chapterCount = 0;
+    };
+    return chapterCount;
+}
+
 // This is duplicated in VerseList.js
 function getVerseCountForChapter(fullText, book, chapter) {
     let verseCount = 0;
@@ -209,7 +219,6 @@ function getVerseRefs(fullText, filteredSearchTerms) {
             chapterLevel.ranges.map((range) => {
                 let subList = []
                 for(let i = parseInt(range.startVerse); i <= parseInt(range.endVerse); i++) {
-                    console.log("pushing")
                     subList.push({book: chapterLevel.book, chapter: range.chapter, verse: i})
                 }
                 fullVerseRefs.push(subList);
@@ -235,9 +244,10 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
     let searchMode = false;
     
     const parsedSearchTerms = searchTerms.map((term) => {
+        const fullBookRegex = new RegExp(/(\d*?\s*?\w+(?:\s+\w+)*)+\s+(all)/, 'i');                 // John all
+        const fullChapterRegex = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+)(?:-(\d+))?/;                    // John 1, John 1-3
         const fullVerseRegexColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+):(\d+))?/;     // John 1:23, John 1:23-1:24, John 1:23-2:34
         const fullVerseRegexNoColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+))?/;         // John 1:23-24
-        const singleChapterRegex = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+)(?:-(\d+))?/;                  // John 1, John 1-3
         const partialVerseRegexColon = /(\d+):(\d+)(?:-(\d+))?:?(\d+)?/;                            // 1:29, 1:30-31, 1:31-1:32
         const partialVerseRegexVerseRange = /(\d+)(?:-(\d+))?/;                                     // 26, 26-27
 
@@ -275,7 +285,16 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
             } else {
                 return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, startVerse]};
             }
-        } else if ((match = singleChapterRegex.exec(term))) {
+        } else if ((match = fullBookRegex.exec(term))) {
+            let book = match[1].toLowerCase().replace(/\s/g, '');
+            const endChapter = getChapterCountForBook(fullText, getBookNumberFromName(book));
+
+            if (endChapter !== 0) {
+                return {book: book, chapters: [1, endChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), endChapter)]}; 
+            } else {
+                return undefined;
+            }
+        } else if ((match = fullChapterRegex.exec(term))) {
             let book = match[1].toLowerCase().replace(/\s/g, '');
             const startChapter = match[2];
             const endChapter = match[3];
