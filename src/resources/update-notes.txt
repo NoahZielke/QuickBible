@@ -1,3 +1,8 @@
+Major changes and improvements:
+Granville Sharp rule to Titus 2:13 and 2 Peter 1:1
+"overseer" to "bishop" in Acts 20:28
+
+Updating archaic wording and vocabulary
 change "meet" and "meet for" to "beffiting", "suitable", etc.
 change "meat" in reference to food, to usually, "food"
 "throughly" to "thoroughly"
@@ -5,13 +10,18 @@ change "meat" in reference to food, to usually, "food"
 "shew" to "show"
 "divers" to "various"
 "ensamples" to "examples"
-Granville Sharp rule to Titus 2:13 and 2 Peter 1:1
 "rent" to "tear"
+"forthwith" and "anon" to "immediately"
+"forgat" to "forgot"
+
+English english:
+"labourer" to "laborer"
+"saviour" to "savior"
+"honour" to "honor"
 
 English english todo:
-labourer
-saviour
 
 
 todo:
 scrip??
+maybe change jonas to jonah, elias to elijah, etc.
