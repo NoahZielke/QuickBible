@@ -1,6 +1,17 @@
 change "meet" and "meet for" to "beffiting", "suitable", etc.
 change "meat" in reference to food, to usually, "food"
 "throughly" to "thoroughly"
-"Suffer" to "allow"
+"suffer" to "allow"
 "shew" to "show"
 "divers" to "various"
+"ensamples" to "examples"
+Granville Sharp rule to Titus 2:13 and 2 Peter 1:1
+"rent" to "tear"
+
+English english todo:
+labourer
+saviour
+
+
+todo:
+scrip??
