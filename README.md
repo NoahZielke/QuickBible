@@ -7,8 +7,9 @@ Currently deployed at:
 ---
 
 Developer Notes:
-- `npm install`
-- `npm start`
+- Start the app locally:
+  - `npm install`
+  - `npm start`
 - If there's a problem:
   - Make sure nvm is installed (`nvm -v`), and node is up to date (`node -v`)
   - `npm cache clean --force`
