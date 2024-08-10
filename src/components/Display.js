@@ -511,7 +511,7 @@ function getBookNumberFromName(book) {
             return 18;
         } else if(book.includes("psalms") || book.includes("psalm") || book === "ps") {
             return 19;
-        } else if(book.includes("proverbs") || book.includes("prov")) {
+        } else if(book.includes("proverbs") || book.includes("proverb") || book.includes("prov")) {
             return 20;
         } else if(book.includes("ecclesiastes") || book.includes("ecc") || book.includes("eccl")) {
             return 21;
@@ -541,7 +541,7 @@ function getBookNumberFromName(book) {
             return 33;
         } else if(book.includes("nahum") || book === "nah") {
             return 34;
-        } else if(book.includes("habakkuk") || book.includes("hab")) {
+        } else if(book.includes("habakkuk") || book.includes("habak") || book.includes("hab")) {
             return 35;
         } else if(book.includes("zephaniah") || book.includes("zeph") || book === "zep") {
             return 36;
