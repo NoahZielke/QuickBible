@@ -4,9 +4,7 @@ Currently deployed at:
 - [quickbible.io](https://quickbible.io/)
 - [quickbible.netlify.app](https://quickbible.netlify.app/)
 
----
-
-Developer Notes:
+### Developer Notes:
 - Start the app locally:
   - `npm install`
   - `npm start`
