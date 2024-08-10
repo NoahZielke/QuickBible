@@ -138,6 +138,7 @@ function Display( {versionList} ) {
             <footer className="general-text pt-5 pb-2">
                 <hr></hr>
                 {/* Copyright disclaimer for a version, if there is one */}
+                <a href="./book-list.html" target="_blank" className="footer-link">Bible Book List</a> <br/>
                 <a href="./about.html" target="_blank" className="footer-link">About this App & Search Tips</a>
             </footer>
         </div>
