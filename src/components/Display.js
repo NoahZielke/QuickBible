@@ -245,9 +245,11 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
 
     let searchMode = false;
     let shortCircuit = false;
-    
+
+    // This prevents the bug. This function does not handle large strings that don't match any of the regexes well. It freezes on longer input
+    // Consider also cases like "Song of text text text text", or "John text text text text text", etc. Those still break it
     const terminator = searchTerms[0].split(" ");
-    if (getBookNumberFromName(terminator[0]) == 100 || isNaN(parseInt(terminator[1]))) {
+    if (getBookNumberFromName(terminator[0]) == 100 && getBookNumberFromName(terminator[0] + " " + terminator[1]) == 100) {
         shortCircuit = true;
     }
     
