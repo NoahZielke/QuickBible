@@ -242,106 +242,118 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
 
     // Split search query on commas to check for refs -> could add semicolon split
     const searchTerms = searchQuery.split(/\s*,\s*/);
+
     let searchMode = false;
     
-    const parsedSearchTerms = searchTerms.map((term) => {
-        const fullBookRegex = new RegExp(/(\d*?\s*?\w+(?:\s+\w+)*)+\s+(all)/, 'i');                 // John all
-        const fullChapterRegex = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+)(?:-(\d+))?/;                    // John 1, John 1-3
-        const fullVerseRegexColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+):(\d+))?/;     // John 1:23, John 1:23-1:24, John 1:23-2:34
-        const fullVerseRegexNoColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+))?/;         // John 1:23-24
-        const partialVerseRegexColon = /(\d+):(\d+)(?:-(\d+))?:?(\d+)?/;                            // 1:29, 1:30-31, 1:31-1:32
-        const partialVerseRegexVerseRange = /(\d+)(?:-(\d+))?/;                                     // 26, 26-27
-
-        let match;
-
-        if ((match = fullVerseRegexColon.exec(term)) && match[4] && match[5]) {
-            let book = match[1].toLowerCase().replace(/\s/g, '');
-            const startChapter = match[2];
-            const startVerse = match[3];
-            const endChapter = match[4];
-            const endVerse = match[5];
-            
-            if (endChapter && endVerse) {
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]};
-            } else if (endChapter) {
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
-            } else if (endVerse) {
-                return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, endVerse]};
-            } else {
-                return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, startVerse]};
-            }
-        } else if ((match = fullVerseRegexNoColon.exec(term))) {
-            let book = match[1].toLowerCase().replace(/\s/g, '');
-            const startChapter = match[2];
-            const startVerse = match[3];
-            const endChapter = match[2];
-            const endVerse = match[4];
-            
-            if (endChapter && endVerse) {
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]};
-            } else if (endChapter) {
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
-            } else if (endVerse) {
-                return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, endVerse]};
-            } else {
-                return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, startVerse]};
-            }
-        } else if ((match = fullBookRegex.exec(term))) {
-            let book = match[1].toLowerCase().replace(/\s/g, '');
-            const endChapter = getChapterCountForBook(fullText, getBookNumberFromName(book));
-
-            if (endChapter !== 0) {
-                return {book: book, chapters: [1, endChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), endChapter)]}; 
-            } else {
-                return undefined;
-            }
-        } else if ((match = fullChapterRegex.exec(term))) {
-            let book = match[1].toLowerCase().replace(/\s/g, '');
-            const startChapter = match[2];
-            const endChapter = match[3];
-
-            if (endChapter) {
-                return {book: book, chapters: [startChapter, endChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), endChapter)]}; 
-            } else {
-                return {book: book, chapters: [startChapter, startChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), startChapter)]}; 
-            }
-        } else if ((match = partialVerseRegexColon.exec(term))) {
-            const book = "inherit!";
-            if (match[4]) {
-                const startChapter = match[1];
-                const endChapter = match[3];
-                const startVerse = match[2];
+    const terminator = searchTerms[0].split(" ");
+    if (getBookNumberFromName(terminator[0]) == 100 || isNaN(parseInt(terminator[1]))) {
+        searchMode = true;
+    }
+    
+    let parsedSearchTerms = [];
+    
+    if (searchMode == false) {
+        parsedSearchTerms = searchTerms.map((term) => {
+            const fullBookRegex = new RegExp(/(\d*?\s*?\w+(?:\s+\w+)*)+\s+(all)/, 'i');                 // John all
+            const fullChapterRegex = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+)(?:-(\d+))?/;                    // John 1, John 1-3
+            const fullVerseRegexColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+):(\d+))?/;     // John 1:23, John 1:23-1:24, John 1:23-2:34
+            const fullVerseRegexNoColon = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+):(\d+)(?:-(\d+))?/;         // John 1:23-24
+            const partialVerseRegexColon = /(\d+):(\d+)(?:-(\d+))?:?(\d+)?/;                            // 1:29, 1:30-31, 1:31-1:32
+            const partialVerseRegexVerseRange = /(\d+)(?:-(\d+))?/;                                     // 26, 26-27
+    
+            let match;
+    
+            if ((match = fullVerseRegexColon.exec(term)) && match[4] && match[5]) {
+                let book = match[1].toLowerCase().replace(/\s/g, '');
+                const startChapter = match[2];
+                const startVerse = match[3];
+                const endChapter = match[4];
+                const endVerse = match[5];
+                
+                if (endChapter && endVerse) {
+                    return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]};
+                } else if (endChapter) {
+                    return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
+                } else if (endVerse) {
+                    return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, endVerse]};
+                } else {
+                    return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, startVerse]};
+                }
+            } else if ((match = fullVerseRegexNoColon.exec(term))) {
+                let book = match[1].toLowerCase().replace(/\s/g, '');
+                const startChapter = match[2];
+                const startVerse = match[3];
+                const endChapter = match[2];
                 const endVerse = match[4];
                 
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]};
-            } else {
-                const startChapter = match[1];
-                const endChapter = match[1];
-                const startVerse = match[2];
-                const endVerse = match[3];
-
+                if (endChapter && endVerse) {
+                    return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]};
+                } else if (endChapter) {
+                    return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
+                } else if (endVerse) {
+                    return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, endVerse]};
+                } else {
+                    return {book: book, chapters: [startChapter, startChapter], verses: [startVerse, startVerse]};
+                }
+            } else if ((match = fullBookRegex.exec(term))) {
+                let book = match[1].toLowerCase().replace(/\s/g, '');
+                const endChapter = getChapterCountForBook(fullText, getBookNumberFromName(book));
+    
+                if (endChapter !== 0) {
+                    return {book: book, chapters: [1, endChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), endChapter)]}; 
+                } else {
+                    return undefined;
+                }
+            } else if ((match = fullChapterRegex.exec(term))) {
+                let book = match[1].toLowerCase().replace(/\s/g, '');
+                const startChapter = match[2];
+                const endChapter = match[3];
+    
+                if (endChapter) {
+                    return {book: book, chapters: [startChapter, endChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), endChapter)]}; 
+                } else {
+                    return {book: book, chapters: [startChapter, startChapter], verses: [1, getVerseCountForChapter(fullText, getBookNumberFromName(book), startChapter)]}; 
+                }
+            } else if ((match = partialVerseRegexColon.exec(term))) {
+                const book = "inherit!";
+                if (match[4]) {
+                    const startChapter = match[1];
+                    const endChapter = match[3];
+                    const startVerse = match[2];
+                    const endVerse = match[4];
+                    
+                    return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]};
+                } else {
+                    const startChapter = match[1];
+                    const endChapter = match[1];
+                    const startVerse = match[2];
+                    const endVerse = match[3];
+    
+                    if (endVerse) {
+                        return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]}; 
+                    } else {
+                        return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
+                    }
+                }
+            } else if ((match = partialVerseRegexVerseRange.exec(term))) {
+                const book = "inherit!";
+                const startChapter = "inherit!";
+                const endChapter = "inherit!";
+                const startVerse = match[1];
+                const endVerse = match[2];
+    
                 if (endVerse) {
                     return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]}; 
                 } else {
                     return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
                 }
-            }
-        } else if ((match = partialVerseRegexVerseRange.exec(term))) {
-            const book = "inherit!";
-            const startChapter = "inherit!";
-            const endChapter = "inherit!";
-            const startVerse = match[1];
-            const endVerse = match[2];
-
-            if (endVerse) {
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, endVerse]}; 
             } else {
-                return {book: book, chapters: [startChapter, endChapter], verses: [startVerse, startVerse]};
+                return undefined;
             }
-        } else {
-            return undefined;
-        }
-    });
+        });
+    }
+    
+
 
     // Remove non-valid ref elements. If nothing is left, we will enter search mode
     let filteredSearchTerms = parsedSearchTerms.filter((element) => element !== undefined);
