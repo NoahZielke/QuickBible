@@ -244,15 +244,16 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
     const searchTerms = searchQuery.split(/\s*,\s*/);
 
     let searchMode = false;
+    let shortCircuit = false;
     
     const terminator = searchTerms[0].split(" ");
     if (getBookNumberFromName(terminator[0]) == 100 || isNaN(parseInt(terminator[1]))) {
-        searchMode = true;
+        shortCircuit = true;
     }
     
     let parsedSearchTerms = [];
     
-    if (searchMode == false) {
+    if (shortCircuit == false) {
         parsedSearchTerms = searchTerms.map((term) => {
             const fullBookRegex = new RegExp(/(\d*?\s*?\w+(?:\s+\w+)*)+\s+(all)/, 'i');                 // John all
             const fullChapterRegex = /(\d*?\s*?\w+(?:\s+\w+)*)+\s+(\d+)(?:-(\d+))?/;                    // John 1, John 1-3
