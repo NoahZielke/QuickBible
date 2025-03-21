@@ -139,7 +139,7 @@ function Display( {versionList} ) {
                 <hr></hr>
                 {/* Copyright disclaimer for a version, if there is one */}
                 <a href="./book-list.html" target="_blank" className="footer-link">Bible Book List</a> <br/>
-                <a href="./about.html" target="_blank" className="footer-link">About this App & Search Tips</a>
+                <a href="./about.html" target="_blank" className="footer-link">Search Tips</a>
             </footer>
         </div>
     );
