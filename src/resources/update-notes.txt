@@ -16,3 +16,7 @@ Acts 7:59, 1 John 3:16
 "Sabaoth" to "hosts"
 "damned" to "condemned", "damnation" to "condemnation", "damnable" to "destructive"
 "all of you" (intended to replace "ye") to "you"
+"in order" to "for" in some places (apparently an error)
+"to morrow" to "tomorrow"
+"to day" to "today"
+"no where" to "nowhere"
