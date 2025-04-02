@@ -30507,7 +30507,10 @@ function WEBFullText() {
                 "Don\u2019t overthrow God\u2019s work for food\u2019s sake. All things indeed are clean, however it is evil for that man who creates a stumbling block by eating.",
                 "It is good to not eat meat, drink wine, nor do anything by which your brother stumbles, is offended, or is made weak.",
                 "Do you have faith? Have it to yourself before God. Happy is he who doesn\u2019t judge himself in that which he approves.",
-                "But he who doubts is condemned if he eats, because it isn\u2019t of faith; and whatever is not of faith is sin. (14:24) Now to him who is able to establish you according to my Good News and the preaching of Jesus Christ, according to the revelation of the mystery which has been kept secret through long ages, (14:25) but now is revealed, and by the Scriptures of the prophets, according to the commandment of the eternal God, is made known for obedience of faith to all the nations; (14:26) to the only wise God, through Jesus Christ, to whom be the glory forever! Amen."
+                "But he who doubts is condemned if he eats, because it isn\u2019t of faith; and whatever is not of faith is sin.",
+                "Now to him who is able to establish you according to my Good News and the preaching of Jesus Christ, according to the revelation of the mystery which has been kept secret through long ages,",
+                "but now is revealed, and by the Scriptures of the prophets, according to the commandment of the eternal God, is made known for obedience of faith to all the nations;",
+                "to the only wise God, through Jesus Christ, to whom be the glory forever! Amen."
             ],
             15: [
                 "Now we who are strong ought to bear the weaknesses of the weak, and not to please ourselves.",
