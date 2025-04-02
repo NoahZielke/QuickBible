@@ -25100,7 +25100,7 @@ function KJV25FullText() {
                 "And Eliud begot Eleazar; and Eleazar begot Matthan; and Matthan begot Jacob;",
                 "And Jacob begot Joseph the husband of Mary, of whom was born Jesus, who is called Christ.",
                 "So all the generations from Abraham to David are fourteen generations; and from David until the carrying away into Babylon are fourteen generations; and from the carrying away into Babylon unto Christ are fourteen generations.",
-                "Now the birth of Jesus Christ was likewise: When as his mother Mary was espoused to Joseph, before they came together, she was found with child of the Holy Spirit.",
+                "Now the birth of Jesus Christ was like this: When as his mother Mary was espoused to Joseph, before they came together, she was found with child of the Holy Spirit.",
                 "Then Joseph her husband, being a just man, and not willing to make her a public example, was minded to put her away privately.",
                 "But while he thought on these things, behold, the angel of the LORD appeared unto him in a dream, saying, Joseph, you son of David, fear not to take unto you Mary your wife: for that which is conceived in her is of the Holy Spirit.",
                 "And she shall bring forth a son, and you shall call his name JESUS: for he shall save his people from their sins.",
@@ -29747,7 +29747,7 @@ function KJV25FullText() {
             ],
             19: [
                 "And it came to pass, that, while Apollos was at Corinth, Paul having passed through the upper coasts came to Ephesus: and finding certain disciples,",
-                "He said unto them, Have you received the Holy Spirit since you believed?  And they said unto him, We have not so much as heard whether there be any Holy Spirit.",
+                "He said unto them, Have you received the Holy Spirit since you believed? And they said unto him, We have not so much as heard whether there be any Holy Spirit.",
                 "And he said unto them, Unto what then were you baptized? And they said, Unto John's baptism.",
                 "Then said Paul, John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on Christ Jesus.",
                 "When they heard this, they were baptized in the name of the Lord Jesus.",
