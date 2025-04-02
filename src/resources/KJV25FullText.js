@@ -24495,7 +24495,7 @@ function KJV25FullText() {
             ],
             5: [
                 "Now gather yourself in troops, O daughter of troops: he has laid siege against us: they shall strike the judge of Israel with a rod upon the cheek.",
-                "But you, Bethlehem Ephratah, though you be little among the thousands of Judah, yet out of you shall he comes forth unto me that is to be ruler in Israel; whose activities forth have been from of old, from everlasting.",
+                "But you, Bethlehem Ephratah, though you be little among the thousands of Judah, yet out of you shall he comes forth unto me that is to be ruler in Israel; whose origin is from of old, from ancient days.",
                 "Therefore will he give them up, until the time that she which labors has brought forth: then the remnant of his brethren shall return unto the children of Israel.",
                 "And he shall stand and feed in the strength of the LORD, in the majesty of the name of the LORD his God; and they shall abide: for now shall he be great unto the ends of the earth.",
                 "And this man shall be the peace, when the Assyrian shall come into our land: and when he shall tread in our palaces, then shall we raise against him seven shepherds, and eight principal men.",
@@ -29311,7 +29311,7 @@ function KJV25FullText() {
                 "And said, Behold, I see the heavens opened, and the Son of man standing on the right hand of God.",
                 "Then they cried out with a loud voice, and stopped their ears, and ran upon him with one accord,",
                 "And cast him out of the city, and stoned him: and the witnesses laid down their clothes at a young man's feet, whose name was Saul.",
-                "And they stoned Stephen, calling upon God, and saying, Lord Jesus, receive my spirit.",
+                "And as they stoned Stephen, he called out, saying, Lord Jesus, receive my spirit.",
                 "And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep."
             ],
             8: [
@@ -33041,7 +33041,7 @@ function KJV25FullText() {
                 "Marvel not, my brethren, if the world hate you.",
                 "We know that we have passed from death unto life, because we love the brethren. He that loves not his brother abides in death.",
                 "Whosoever hates his brother is a murderer: and you know that no murderer has eternal life abiding in him.",
-                "Hereby perceive we the love of God, because he laid down his life for us: and we ought to lay down our lives for the brethren.",
+                "Hereby we know love, because he laid down his life for us: and we ought to lay down our lives for the brethren.",
                 "But whoso has this world's good, and sees his brother have need, and shuts up his bowels of compassion from him, how dwells the love of God in him?",
                 "My little children, let us not love in word, neither in tongue; but in deed and in truth.",
                 "And hereby we know that we are of the truth, and shall assure our hearts before him.",
