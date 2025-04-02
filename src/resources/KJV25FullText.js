@@ -24461,7 +24461,7 @@ function KJV25FullText() {
                 "The women of my people have you cast out from their pleasant houses; from their children have you taken away my glory for ever.",
                 "Arise you, and depart; for this is not your rest: because it is polluted, it shall destroy you, even with a sore destruction.",
                 "If a man walking in the spirit and falsehood do lie, saying, I will prophesy unto you of wine and of strong drink; he shall even be the prophet of this people.",
-                "I will surely assemble, O Jacob, you; I will surely gather the remnant of Israel; I will put them together as the sheep of Bozrah, as the flock in the midst of their fold: they shall make great noise by reason of the multitude of men.",
+                "I will surely assemble, O Jacob, all of you; I will surely gather the remnant of Israel; I will put them together as the sheep of Bozrah, as the flock in the midst of their fold: they shall make great noise by reason of the multitude of men.",
                 "The breaker has come up before them: they have broken up, and have passed through the gate, and are gone out by it: and their king shall pass before them, and the LORD on the head of them."
             ],
             3: [
