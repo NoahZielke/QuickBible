@@ -1,15 +1,13 @@
 import "./app.css"
 import Display from "./components/Display";
-import KJV25FullText from "./resources/KJV25FullText";
 import KJVFullText from "./resources/KJVFullText";
 import WEBFullText from "./resources/WEBFullText";
 
 
 function App() {
-    const KJV25 = KJV25FullText();
     const KJV = KJVFullText();
     const WEB = WEBFullText();
-    const versionList = [KJV25, KJV, WEB];
+    const versionList = [KJV, WEB];
 
     return (
         <div>
