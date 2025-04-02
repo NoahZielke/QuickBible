@@ -20,3 +20,8 @@ Acts 7:59, 1 John 3:16
 "to morrow" to "tomorrow"
 "to day" to "today"
 "no where" to "nowhere"
+"meats" to "foods"
+"by and by" to "immediately"
+"gainsay" to "contradict"
+
+British to American English spellings
