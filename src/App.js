@@ -12,7 +12,7 @@ function App() {
     return (
         <div>
             <div className="title-container pb-1">
-                <h3 className="page-title px-3 pt-3 mb-0">🕮 Quick Bible</h3>
+                <h3 className="page-title px-3 pt-3 pb-1">🕮 Quick Bible</h3>
             </div>
             <div className="py-2"></div>
             <div className="container-fluid pt-4">
