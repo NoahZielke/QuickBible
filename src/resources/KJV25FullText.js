@@ -30519,7 +30519,7 @@ function KJV25FullText() {
                 "For even Christ pleased not himself; but, as it is written, The reproaches of them that reproached you fell on me.",
                 "For whatsoever things were written in old times were written for our learning, that we through patience and comfort of the scriptures might have hope.",
                 "Now the God of patience and consolation grant you to be likeminded one toward another according to Christ Jesus:",
-                "That you may with one mind and one mouth glorify God, even the Father of our Lord Jesus Christ.",
+                "That you may with one mind and one mouth glorify the God and Father of our Lord Jesus Christ.",
                 "Wherefore receive you one another, as Christ also received us to the glory of God.",
                 "Now I say that Jesus Christ was a minister of the circumcision for the truth of God, to confirm the promises made unto the fathers:",
                 "And that the Gentiles might glorify God for his mercy; as it is written, For this cause I will confess to you among the Gentiles, and sing unto your name.",
@@ -31053,7 +31053,7 @@ function KJV25FullText() {
             1: [
                 "Paul, an apostle of Jesus Christ by the will of God, and Timothy our brother, unto the church of God which is at Corinth, with all the saints which are in all Achaia:",
                 "Grace be to you and peace from God our Father, and from the Lord Jesus Christ.",
-                "Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort;",
+                "Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort;",
                 "Who comforts us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.",
                 "For as the sufferings of Christ abound in us, so our consolation also abounds by Christ.",
                 "And whether we be afflicted, it is for your consolation and salvation, which is effectual in the enduring of the same sufferings which we also suffer: or whether we be comforted, it is for your consolation and salvation.",
