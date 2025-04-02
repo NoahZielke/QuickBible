@@ -1,36 +1,14 @@
-Major changes and improvements:
-Granville Sharp rule to Titus 2:13 and 2 Peter 1:1
-"overseer" to "bishop" in Acts 20:28
-"hearing a voice" to "hearing the sound" in Acts 9:7
+Acts 12:4
+Acts 20:28
+Romans 3:25
+Romans 11:29
+1 Corinthians 9:7
+Ephesians 3:9
+1 Timothy 3:16
+1 John 5:7-8
+Revelation 22:19
+Revelation 1:6, 3:2
 
-
-Updating archaic wording and vocabulary
-change "meet" and "meet for" to "beffiting", "suitable", etc.
-change "meat" in reference to food, to usually, "food"
-"throughly" to "thoroughly"
-"suffer" to "allow"
-"shew" to "show"
-"divers" to "various"
-"ensamples" to "examples"
-"rent" to "tear"
-"forthwith" and "anon" to "immediately"
-"forgat" to "forgot"
-"victuals" to "food"
-"keep under" to "subdue" 
-"sore afraid" to "terrified"
-"listed" to "willed"
-"to day" to "today"
-"to morrow" to "tomorrow" 
-
-English english:
-"labourer" to "laborer"
-"saviour" to "savior"
-"honour" to "honor"
-
-English english todo:
-
-
-todo:
-scrip??
-maybe change jonas to jonah, elias to elijah, etc.
-Get rid of "sore displeased", "sore afraid", etc.
+"Godhead" to "deity"
+"Sabaoth" to "hosts"
+"damned" to "condemned", "damnation" to "condemnation", "damnable" to "destructive"
