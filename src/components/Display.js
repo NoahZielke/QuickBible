@@ -247,7 +247,7 @@ function normalizeQuery(fullText, searchQuery, setResultsFeedback) {
     let parsedSearchTerms = [];
     
     parsedSearchTerms = searchTerms.map((term) => {
-        const fullBookRegex = /(\d*\s*\w+(?:\s+\w+)*)\s+(all)/;                                     // John all
+        const fullBookRegex = /(\d*\s*\w+(?:\s+\w+)*)\s+(all)/i;                                    // John all
         const fullChapterRegex = /(\d*\s*\w+(?:\s+\w+)*)\s+(\d+)(?:-(\d+))?/;                       // John 1, John 1-3
         const fullVerseRegexColon = /(\d*\s*\w+(?:\s+\w+)*)\s+(\d+):(\d+)(?:-(\d+):(\d+))?/;        // John 1:23-1:24, John 1:23-2:34
         const fullVerseRegexNoColon = /(\d*\s*\w+(?:\s+\w+)*)\s+(\d+):(\d+)(?:-(\d+))?/;            // John 1:23, John 1:23-24
