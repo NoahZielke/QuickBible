@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-import KJVFullText from "../resources/KJVFullText";
+import KJV25FullText from "../resources/KJV25FullText";
 
 function Display( {versionList} ) {
-    const [version, setVersion] = useState(KJVFullText);
+    const [version, setVersion] = useState(KJV25FullText);
 
     const [bookChapVerse, setBookChapVerse] = useState([
         [{book: 43, chapter: 3, verse: 16}],
@@ -94,6 +94,7 @@ function Display( {versionList} ) {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
+                                <Dropdown.Item eventKey="KJV25">King James Version 2025 (KJV25)</Dropdown.Item>
                                 <Dropdown.Item eventKey="KJV">King James Version (KJV)</Dropdown.Item>
                                 <Dropdown.Item eventKey="WEB">World English Bible (WEB)</Dropdown.Item>
                             </Dropdown.Menu>
