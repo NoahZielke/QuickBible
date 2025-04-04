@@ -7,9 +7,9 @@ import WEBFullText from "./resources/WEBFullText";
 
 function App() {
     const KJV = KJVFullText();
-    const KJV25 = KJV25FullText();
+    // const KJV25 = KJV25FullText();
     const WEB = WEBFullText();
-    const versionList = [KJV25, KJV, WEB];
+    const versionList = [KJV, WEB];
 
     return (
         <div>

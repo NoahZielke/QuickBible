@@ -95,7 +95,7 @@ function Display( {versionList} ) {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item eventKey="KJV">King James Version (KJV)</Dropdown.Item>
-                                <Dropdown.Item eventKey="KJV25">King James Version 2025 (KJV25)</Dropdown.Item>
+                                {/* <Dropdown.Item eventKey="KJV25">King James Version 2025 (KJV25)</Dropdown.Item> */}
                                 <Dropdown.Item eventKey="WEB">World English Bible (WEB)</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
